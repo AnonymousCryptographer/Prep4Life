@@ -1,0 +1,85 @@
+[package]
+name = "silent_party"
+authors = ["Anonymous Cryptographer"]
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aes = "0.8"
+once_cell = "1.12"
+rayon = "1.5.3"
+curve25519-dalek = { version="3", features=["serde"]}
+blake3 = "1"
+rand_core = { version="0.6"}
+rand = "0.8"
+log = "0.4"
+serde = { version = "1.0", features=["derive"]}
+ciborium = "0.2"
+serde-big-array = "0.4"
+async-trait = "0.1"
+tokio = { version = "1", features = ["full"]}
+bincode = "1"
+chacha20 = "0.9"
+futures = "0.3"
+aes-prng = "0.2"
+tokio-tungstenite = "0.18"
+url = { version = "2" }
+bitvec= { version = "1", features = ["serde"] }
+core_affinity = "0.8"
+
+[dev-dependencies]
+clap = { version="4", features = ["derive"]}
+clap-verbosity-flag = "2"
+criterion = {version = "0.4", features = ["async_tokio"]}
+pretty_env_logger = "0.5.0"
+indicatif = "0.17"
+
+[features]
+default = ["aesni"]
+aesni = []
+
+[[bench]]
+name = "double_prg"
+harness = false
+
+
+[[bench]]
+name = "mul_benchmark"
+harness = false
+
+[[bench]]
+name = "circuit_eval"
+harness = false
+
+[[bench]]
+name = "prf"
+harness = false
+
+[[bench]]
+name = "hash"
+harness = false
+
+[[bench]]
+name = "mem"
+harness = false
+
+[[bench]]
+name = "spdz"
+harness = false
+
+[[bench]]
+name = "parallel"
+harness = false
+
+
+[[bench]]
+name = "zkfliop"
+harness = false
+
+[[bench]]
+name = "mersenne_vs_bin"
+harness = false
+
+[[bench]]
+name = "prg"
+harness = false
